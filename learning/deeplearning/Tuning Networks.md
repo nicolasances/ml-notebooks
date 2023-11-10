@@ -124,3 +124,18 @@ That is because if the values are not normalized, the cost function's shape migh
 ![](./img/normalization-cost.png)
 
 Consider that normalization is not always usefull, but **it's never harmfull** so you might as well always use it! 
+
+# 4. Weight Initializtion
+Initialization strategy always depends on the activation function for the layer. <br>
+So you want to initialize differently based on the layer. 
+
+In general, you want to randomly initialize weights and multiply by a factor that will reduce the weights based on the **number of inputs that feed into the layer**.<br>
+
+**Why is that**? <br>
+Basically because when you calculate $ z = W_1.X_1 + W_2.X_2 + ... + W_n.X_n $, the higher $n$ is, the smaller you want to initialize the weights, to avoid having a z that is too big (hence going towards exploding gradients).<br>
+Initialization will allow my weights to not explode nor decay too quickly. 
+
+For **ReLU** layers, you want to do: 
+`Wx = np.random.randn(shape) * np.sqrt(2/n[l-1])`
+
+For **tanH** layers, instead of **2** you'll use **1**. 
