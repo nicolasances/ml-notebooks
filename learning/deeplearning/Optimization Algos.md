@@ -111,6 +111,17 @@ That means that while the epochs go, $\alpha$ decreases.
 
 Learning Rate Decay is a bit lower on Andrew's list of paramters that he tunes.
 
+An **IMPORTANT** note is that the learning rate, calculated with the above formula, will go very quickly close to zero, which will make the algorithm **never converge**. 
+![](img/lr-decay.png)
+
+So it is better to do **Fixed Interval Scheduling**. <br>
+With FIS, you end up not changing the learning rate in steps, without varying it at every epoch, but only every 1000s of epochs (for example) <bR>
+![](img/lr-fixed-interval-scheduling.png)
+
+Concretely, the formula for calculating the learning rate becomes: <br>
+$\alpha = \frac{1}{1 + decay * (\frac{epoch}{timeInterval})}*\alpha_0$<br>
+Where $timeInterval$ is a parameter that reduces the speed of decay.
+
 ## Note on Local Optima
 Note that the fear of ending up in local optima is actually less and less relevant in high feature dimensions. 
 
