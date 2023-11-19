@@ -25,3 +25,12 @@ In this phase you will tweak:
 If you see problems in this phase, you should: 
     * Change the **dev** set
     * Change the cost function
+
+## Training, Dev, Test set sizes
+In traditional ML, you would apply a split of around 60% train, 20% dev, 20% test. <br>
+In Deep Learning, where a lot of data is used, you will be fine using 98% train, 1% dev, 1% test.<br>That is because even 1% is a huge amount of records when considering the amount of data needed by a DL model.
+
+## Other
+
+Andrew Ng recommends, when comparing models, to consider only **one evaluation metric** (or at least to boil down to a single one used for comparison). *He makes the example of using F1 score instead of Precision and Recall* and, in case of multiclass classification, instead of comparing the F1 score of each class, to average the F1 scores. 
+
