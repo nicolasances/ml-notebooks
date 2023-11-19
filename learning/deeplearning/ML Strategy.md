@@ -9,13 +9,15 @@ These are the step-by-step objectives and what Andrew Ng tweaks in these phases:
 1. Training - You want to fit well the training set.<br>
 In this phase you will tweak: 
     * Size of the network (bigger network for better training performance)
-    * Optimizer (e.g. Adam)
+    * Train longer or Better Optimizer (e.g. Adam, to converge faster)
     * Some hyperparameters
+    * Different NN Architecture
 
 2. Cross-Validation - You want to fit well the **dev (CV)** set.<br>
 In this phase you will tweak: 
-    * Regularization Hyperparameters
-    * Bigger **training** set 
+    * Regularization Hyperparameters, Dropout
+    * Data augmentation
+    * Bigger **training** set (more data)
 
 3. Test - You want to fit well the **test** set.<br>
 In this phase you will tweak: 
